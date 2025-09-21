@@ -8,7 +8,7 @@ const ListTask = () => {
   const dispatch = useDispatch();
 
   // Filter tasks based on the current filter
-  const filteredTasks = tasks.filter(task => {
+  const filteredTasks = (tasks || []).filter(task => {
     if (filter === 'done') return task.isDone;
     if (filter === 'notDone') return !task.isDone;
     return true;
